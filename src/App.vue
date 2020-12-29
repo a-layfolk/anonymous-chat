@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main-tab-bar/>
+    <!-- <router-view/> -->
+    <div class="message-box">
+      <div class="profile-pic">
+        <!-- <img src="https://cdn.jsdelivr.net/gh/a-layfolk/FigureBed/img/course/os/image-20201218091046883.png" alt=""> -->
+      </div>
+      <div class="message">
+        xxxxxx
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MainTabBar from 'components/content/mainTabBar/MainTabBar.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainTabBar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import 'assets/css/base.css';
+  /* .message-box {
+    display: flex;
+  }*/
+  .profile_pic, .message {
+    flex: 1;
+  }
 </style>
