@@ -19,7 +19,8 @@ export default {
   }
   .left, .right {
     flex: 1;
-    max-width: 10vw;
+    max-width: 18vw;
+    padding: 1vw;
   }
   .center {
     flex: 1;
@@ -33,8 +34,7 @@ export default {
   }
   .left > img, .right > img {
 
-    width: 10vw;
-    height: 10vh;
+    width: 15vw;
 
     margin-top: 2vh;
   }
