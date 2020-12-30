@@ -22,11 +22,14 @@ export default {
 
   .left, .right {
     width: 20vw;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(36, 41, 46);
   }
 
+  .left > p {
+    color: rgb(255, 255, 255);
+  }
   .center {
     flex: 1;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(36, 41, 46);
   }
 </style>

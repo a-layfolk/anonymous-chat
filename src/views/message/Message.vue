@@ -1,7 +1,7 @@
 <template>
   <div>
       <nav-bar>
-        <div slot="left">消息</div>
+        <p slot="left">消息</p>
       </nav-bar>
 
     <message-box>

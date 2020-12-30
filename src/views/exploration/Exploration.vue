@@ -1,8 +1,8 @@
 <template>
   <div>
     <nav-bar>
-        <div slot="left">发现</div>
-      </nav-bar>
+      <p slot="left">发现</p>
+    </nav-bar>
   </div>
 </template>
 
