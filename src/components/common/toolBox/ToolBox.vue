@@ -1,5 +1,5 @@
 <template>
-  <div class="tool-box">
+  <div class="tool-box" :style="styleObject">
       <div class="left"><slot name="left"></slot></div>
       <div class="center"><slot name="center"></slot></div>
       <div class="right"><slot name="right"></slot></div>
@@ -8,7 +8,17 @@
 
 <script>
 export default {
-    name: 'ToolBox'
+    name: 'ToolBox',
+    props: {
+        bgcolor: String
+    },
+    data: function() {
+        return {
+            styleObject: {
+                backgroundColor: this.bgcolor
+            }
+        }
+    }
 }
 </script>
 

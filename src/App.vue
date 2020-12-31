@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <main-tab-bar/>
     <router-view/>
+    <main-tab-bar/>
   </div>
 </template>
 
@@ -18,4 +18,15 @@ export default {
 
 <style>
   @import 'assets/css/base.css';
+
+  /* #app {
+    display: flex;
+  }
+
+  #main-content {
+    flex: none;
+  }
+  #main-tab-bar {
+    flex: none;
+  } */
 </style>

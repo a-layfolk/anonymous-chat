@@ -1,5 +1,5 @@
 <template>
-    <div class="address-box">
+    <div class="address-box" :style="styleObject">
         <div class="pic"><slot name="pic"></slot></div>
         <div class="name"><slot name="name"></slot></div>
     </div>
@@ -7,7 +7,17 @@
 
 <script>
 export default {
-    name: 'AddressBox'
+    name: 'AddressBox',
+    props: {
+        bgcolor: String
+    },
+    data: function() {
+        return {
+            styleObject: {
+                backgroundColor: this.bgcolor
+            }
+        }
+    }
 }
 </script>
 

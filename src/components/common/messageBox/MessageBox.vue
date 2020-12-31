@@ -1,14 +1,24 @@
 <template>
    <div class="message-box">
       <div class="left"><slot name="left"></slot></div>
-      <div class="center"><slot name="center"></slot></div>
+      <div class="center" :style="styleObject"><slot name="center"></slot></div>
       <div class="right"><slot name="right"></slot></div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'MessageBox'
+    name: 'MessageBox',
+    props: {
+      bgcolor: String
+    },
+    data: function() {
+      return {
+        styleObject: {
+          backgroundColor: this.bgcolor
+        }
+      }
+    }
 }
 </script>
 

@@ -1,4 +1,5 @@
 <template>
+<div id="main-tab-bar">
   <tab-bar>
       <tab-bar-item path="/message">
           <img slot="item-icon" src="~assets/img/tabbar/message.svg" alt="">
@@ -21,6 +22,7 @@
           <div slot="item-text">我</div>
       </tab-bar-item>
     </tab-bar>
+</div>
 </template>
 
 <script>
@@ -37,5 +39,7 @@ export default {
 </script>
 
 <style scoped>
-
+#main-tab-bar {
+    padding-top: 8vh;
+}
 </style>

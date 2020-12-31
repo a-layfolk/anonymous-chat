@@ -9,7 +9,7 @@
       <p slot="center">你好啊, 我是张三</p>
     </message-box>
 
-    <message-box>
+    <message-box bgcolor='rgb(241, 248, 255)'>
       <p slot="center">你好啊, 我是李四</p>
       <img slot="right" src="~assets/img/messageBox/bomb.jpg" />
     </message-box>
