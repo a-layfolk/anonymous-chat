@@ -1,5 +1,5 @@
 <template>
-    <div class="address-box" :style="styleObject">
+    <div class="address-box" :style="styleObject" @click="changeView">
         <div class="pic"><slot name="pic"></slot></div>
         <div class="name"><slot name="name"></slot></div>
     </div>
@@ -9,13 +9,19 @@
 export default {
     name: 'AddressBox',
     props: {
-        bgcolor: String
+        bgcolor: String,
+        newPath: String
     },
     data: function() {
         return {
             styleObject: {
                 backgroundColor: this.bgcolor
             }
+        }
+    },
+    methods: {
+        changeView: function() {
+            this.$router.push(this.newPath);
         }
     }
 }

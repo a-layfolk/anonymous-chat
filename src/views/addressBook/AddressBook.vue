@@ -6,11 +6,11 @@
       </nav-bar>
     </div>
     <div class="main-content">
-      <address-box>
+      <address-box newPath="/message">
         <img slot="pic" src="~assets/img/messageBox/makima.jpg">
         <p slot="name">玛奇玛</p>
       </address-box>
-      <address-box>
+      <address-box newPath="/message">
         <img slot="pic" src="~assets/img/messageBox/bomb.jpg">
         <p slot="name">蕾塞</p>
       </address-box>
