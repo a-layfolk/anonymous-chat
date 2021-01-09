@@ -5,7 +5,7 @@ const Message = () => import('views/message/Message.vue');
 const AddressBook = () => import('views/addressBook/AddressBook.vue');
 const Exploration = () => import('views/exploration/Exploration.vue');
 const Mine = () => import('views/mine/Mine.vue');
-
+const Login = () => import('views/login/Login.vue');
 // 1. 安装插件
 Vue.use(VueRouter);
 
@@ -30,6 +30,10 @@ const routes = [
   {
     path: '/mine',
     component: Mine
+  },
+  {
+    path: 'login',
+    component: Login
   }
 ]
 

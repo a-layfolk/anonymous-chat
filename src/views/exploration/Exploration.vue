@@ -3,59 +3,73 @@
     <nav-bar>
       <p slot="left">发现</p>
     </nav-bar>
-
-    <div class="send-message">
-        <input type="text"/>
-        <input type="button" value="发送" />
-    </div>
+      <input v-model="username" type="text" placeholder="请输入用户名"/>
+      <input v-model="password" type="password" placeholder="请输入密码" />
+      <input type="submit" value="登录" @click="send"/>
   </div>
 </template>
 
 <script>
+
 import NavBar from 'components/common/navbar/NavBar.vue'
+
+import axios from 'axios'
+// import qs from 'qs'
+
+// const instance = axios.create({
+//   baseURL: 'http://localhost:8000',
+//   timeout: 5000
+// })
+
+// 设置请求拦截器
+// instance.interceptors.request.use(config => {
+//    // 参数转换为表单模式
+//   if(config.data) {
+//     config.data = qs.stringify(config.data);
+//   }
+
+//   // 设置请求头
+//   config.headers = {
+//     // 模拟form表单方式提交请求
+//     'Content-Type': 'application/x-www-form-urlencoded', 
+//   }
+// })
+
+// // 设置响应拦截器
+// instance.interceptors.response.use(response => response, error => {
+//   console.log(error);
+// })
+
 export default {
   components: { 
     NavBar
+  },
+  methods: {
+    send() {
+      axios({
+        url: 'http://localhost:8080/wx/login',
+        method: 'get',
+        params: {
+          code: '123456',
+          username: this.username,
+          password: this.password
+        }
+      }).then(res => {
+        console.log(res);
+      })
+    }  
+  },
+  data: function() {
+    return {
+      username: "",
+      password: ""
+    }
   }
 }
+
+
 </script>
 
 <style>
-.send-message {
-  display: flex;
-  padding: 0 20vw;
-}
-.send-message > input, .send-message > button {
-  flex: 1;
-}
-input[type=text] {
-  height: 8vh;
-  border: 0;  /*去除未选中状态的边框*/
-  border-radius: 6px;
-  box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
-  min-width: 50vw;
-  font-size: 2vh;
-}
-input[type=text]:focus {
-  font-size: 2vh;
-  outline-color: rgb(3, 102, 214);
-  box-shadow: 0px 5px 5px rgba(179, 209, 243, 1);
-}
-input[type=button] {
-  background-color: rgb(250, 251, 252);
-  border: 0;
-  box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
-  border-radius: 4px;
-  margin-left: 1vw;
-}
-input[type=button]:hover{
-  border: 0;
-  background-color: rgb(243, 244, 246);
-}
-input[type=button]:focus{
-  outline: 0;
-}
-/* .send-message > input:focus {
-  border: 1px solid rgb(179, 209, 243);
-} */
+
 </style>
