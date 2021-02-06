@@ -13,7 +13,7 @@
       path: String,
       activeColor: {
         type: String,
-        default: 'rgb(19, 194, 194)'
+        default: 'rgb(44, 151, 75)'
       }
     },
     computed: {
@@ -47,6 +47,6 @@
   }
 
   .active {
-    color: rgb(19, 194, 194);
+    color: rgb(44, 151, 75);
   }
 </style>

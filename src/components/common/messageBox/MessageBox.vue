@@ -1,10 +1,9 @@
 <template>
-  <div class="message-box" :style="styleObject" @click="changeView">
-    <div class="pic"><slot name="pic"></slot></div>
-
-    <div class="info">
-        <span class="name"><slot name="name"></slot></span>
-        <span class="message"><slot name="message"></slot></span>
+  <div class="message-box" :style="styleObject">
+    <div class="pic" key="message-box-pic"><slot name="pic"></slot></div>
+    <div class="info-box">
+      <div class="name"><slot name="name"></slot></div>
+      <div class="details"><slot name="details"></slot></div>
     </div>
   </div>
 </template>
@@ -14,31 +13,29 @@ export default {
   name: 'MessageBox',
   props: {
     bgcolor: String,
-    newPath: String
   },
-  data: function() {
+  data() {
     return {
       styleObject: {
         backgroundColor: this.bgcolor
       }
     }
-  },
-  methods: {
-    changeView: function() {
-      this.$router.push(this.newPath);
-    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .message-box {
   display: flex;
+  flex-direction: row;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(234, 236, 239);
 }
+.info-box {
+  display: flex;
+  flex-direction: column;
+}
 .pic {
-  flex: 1;
   max-width: 5vw;
   padding: 1vw;
 }
@@ -47,17 +44,33 @@ export default {
   margin-top: 1vh;
 }
 .name {
-  margin: 2vh;
+  padding: 2vh;
+  font-size: 1.5vw;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
 }
-
+.details {
+  padding-bottom: 3vh;
+  padding-left: 2vh;
+  font-size: 2vh;
+}
 /* 适配移动端 */
 @media screen and (max-width: 960px){
   .pic {
     max-width: 12vw;
   }
-  .pic > img{
+  .pic > img {
     width: 10vw;
     margin-top: 1vh;
+  }
+  .name > p {
+    font-size: 2vw;
+  }
+  .details {
+    padding-bottom: 1vh;
+  }
+  .details > p {
+    font-size: 1.5vw;
   }
 }
 </style>

@@ -11,10 +11,10 @@
           <img slot="item-icon-active" src="~assets/img/tabbar/address_book_active.svg" alt="">
           <div slot="item-text">通讯录</div>
       </tab-bar-item>
-      <tab-bar-item path="/exploration">
-          <img slot="item-icon" src="~assets/img/tabbar/exploration.svg" alt="">
-          <img slot="item-icon-active" src="~assets/img/tabbar/exploration_active.svg" alt="">
-          <div slot="item-text">发现</div>
+      <tab-bar-item path="/empowerment">
+          <img slot="item-icon" src="~assets/img/tabbar/empowerment.svg" alt="">
+          <img slot="item-icon-active" src="~assets/img/tabbar/empowerment_active.svg" alt="">
+          <div slot="item-text">授权</div>
       </tab-bar-item>
       <tab-bar-item path="/mine">
           <img slot="item-icon" src="~assets/img/tabbar/me.svg" alt="">

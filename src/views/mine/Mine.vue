@@ -8,7 +8,7 @@
       <p slot="center">账号与安全</p>
       <img slot="right" src="~assets/img/toolBox/array.svg"/>
     </tool-box>
-    <tool-box>
+    <tool-box newPath="/about">
       <img slot="left" src="~assets/img/toolBox/about_icon.svg"/>
       <p slot="center">关于</p>
       <img slot="right" src="~assets/img/toolBox/array.svg"/>

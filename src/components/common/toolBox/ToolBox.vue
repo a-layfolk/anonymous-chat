@@ -1,5 +1,5 @@
 <template>
-  <div class="tool-box" :style="styleObject">
+  <div class="tool-box" :style="styleObject" @click="changeView">
       <div class="left"><slot name="left"></slot></div>
       <div class="center"><slot name="center"></slot></div>
       <div class="right"><slot name="right"></slot></div>
@@ -8,17 +8,23 @@
 
 <script>
 export default {
-    name: 'ToolBox',
-    props: {
-        bgcolor: String
-    },
-    data: function() {
-        return {
-            styleObject: {
-                backgroundColor: this.bgcolor
-            }
-        }
+  name: 'ToolBox',  
+  props: {
+    bgcolor: String,
+    newPath: String
+  },
+  data() {
+    return { 
+      styleObject: {
+        backgroundColor: this.bgcolor
+      }
     }
+  },
+  methods: {
+    changeView: function() {
+      this.$router.push(this.newPath);
+    }
+  }
 }
 </script>
 
@@ -42,8 +48,10 @@ export default {
     margin-top: 2vh;
 }
 .center > p {
-    font-size: 1vw;
-    padding: 2vh 2vh;
+    font-size: 1.5vw;
+    padding: 2vh;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
 }
 .right {
     flex: 1;

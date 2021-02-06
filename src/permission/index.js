@@ -6,9 +6,9 @@ router.beforeEach((to, from, next) => {
     const token = localStorage.getItem("token");
 
     if(token) {
-      if(to.path === '/login') {
+      if(to.path === '/subuserlogin') {
         next({
-            path: '/login'
+            path: '/subuserlogin'
         })
       } 
       else {
@@ -17,7 +17,7 @@ router.beforeEach((to, from, next) => {
     }
     else {
       next({
-        path: '/login'
+        path: '/subuserlogin'
       })
     }
   }
